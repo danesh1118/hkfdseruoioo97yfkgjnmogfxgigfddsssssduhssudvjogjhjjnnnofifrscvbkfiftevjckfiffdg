@@ -48,6 +48,13 @@
           "77.88.8.1",
           "2a02:6b8::feed:0ff",
           "2a02:6b8:0:1::feed:0ff"
+        ],
+        "pl.nodes.rocketnetwork.ru": [
+          "195.3.221.158",
+          "195.3.223.40",
+          "195.3.221.147",
+          "193.34.213.174",
+          "195.3.223.126"
         ]
       },
       "servers": [
@@ -110,13 +117,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "198.41.223.119",
+              "address": "pl.nodes.rocketnetwork.ru",
               "port": 443,
               "users": [
                 {
                   "encryption": "none",
-                  "flow": "",
-                  "id": "ae0dd58e-e222-40bf-84ae-365a97532737",
+                  "flow": "xtls-rprx-vision",
+                  "id": "60d0630c-8ac4-436d-ad2c-b798b63e1c69",
                   "level": 8
                 }
               ]
@@ -124,18 +131,23 @@
           ]
         },
         "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
+          "network": "tcp",
+          "realitySettings": {
             "allowInsecure": true,
-            "serverName": "pagescm.freen6.de5.net",
+            "fingerprint": "chrome",
+            "publicKey": "Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs",
+            "serverName": "pl.nodes.rocketnetwork.ru",
+            "shortId": "428ef87fd47a3a32",
             "show": false
           },
-          "wsSettings": {
-            "headers": {
-              "Host": "pagescm.freen6.de5.net"
-            },
-            "path": "/season/sort/specialfp=chrome"
+          "security": "reality",
+          "sockopt": {
+            "domainStrategy": "UseIPv4v6"
+          },
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
           }
         },
         "tag": "proxy"
@@ -157,282 +169,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇩🇪",
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": [
-        {
-          "ip": [
-            "1.1.1.1"
-          ],
-          "outboundTag": "proxy",
-          "port": "53",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "223.5.5.5"
-          ],
-          "outboundTag": "direct",
-          "port": "53",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:googleapis.cn",
-            "domain:gstatic.com"
-          ],
-          "outboundTag": "proxy",
-          "type": "field"
-        },
-        {
-          "network": "udp",
-          "outboundTag": "block",
-          "port": "443",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "geosite:private"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "223.5.5.5",
-            "223.6.6.6",
-            "2400:3200::1",
-            "2400:3200:baba::1",
-            "119.29.29.29",
-            "1.12.12.12",
-            "120.53.53.53",
-            "2402:4e00::",
-            "2402:4e00:1::",
-            "180.76.76.76",
-            "2400:da00::6666",
-            "114.114.114.114",
-            "114.114.115.115",
-            "114.114.114.119",
-            "114.114.115.119",
-            "114.114.114.110",
-            "114.114.115.110",
-            "180.184.1.1",
-            "180.184.2.2",
-            "101.226.4.6",
-            "218.30.118.6",
-            "123.125.81.6",
-            "140.207.198.6",
-            "1.2.4.8",
-            "210.2.4.8",
-            "52.80.66.66",
-            "117.50.22.22",
-            "2400:7fc0:849e:200::4",
-            "2404:c2c0:85d8:901::4",
-            "117.50.10.10",
-            "52.80.52.52",
-            "2400:7fc0:849e:200::8",
-            "2404:c2c0:85d8:901::8",
-            "117.50.60.30",
-            "52.80.60.30"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:alidns.com",
-            "domain:doh.pub",
-            "domain:dot.pub",
-            "domain:360.cn",
-            "domain:onedns.net"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "geoip:cn"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "geosite:cn"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
-        "dns.alidns.com": [
-          "223.5.5.5",
-          "223.6.6.6",
-          "2400:3200::1",
-          "2400:3200:baba::1"
-        ],
-        "one.one.one.one": [
-          "1.1.1.1",
-          "1.0.0.1",
-          "2606:4700:4700::1111",
-          "2606:4700:4700::1001"
-        ],
-        "dns.cloudflare.com": [
-          "104.16.132.229",
-          "104.16.133.229",
-          "2606:4700::6810:84e5",
-          "2606:4700::6810:85e5"
-        ],
-        "cloudflare-dns.com": [
-          "104.16.248.249",
-          "104.16.249.249",
-          "2606:4700::6810:f8f9",
-          "2606:4700::6810:f9f9"
-        ],
-        "dot.pub": [
-          "1.12.12.12",
-          "120.53.53.53"
-        ],
-        "dns.google": [
-          "8.8.8.8",
-          "8.8.4.4",
-          "2001:4860:4860::8888",
-          "2001:4860:4860::8844"
-        ],
-        "dns.quad9.net": [
-          "9.9.9.9",
-          "149.112.112.112",
-          "2620:fe::fe",
-          "2620:fe::9"
-        ],
-        "common.dot.dns.yandex.net": [
-          "77.88.8.8",
-          "77.88.8.1",
-          "2a02:6b8::feed:0ff",
-          "2a02:6b8:0:1::feed:0ff"
-        ]
-      },
-      "servers": [
-        "1.1.1.1",
-        {
-          "address": "1.1.1.1",
-          "domains": [
-            "domain:googleapis.cn",
-            "domain:gstatic.com"
-          ]
-        },
-        {
-          "address": "223.5.5.5",
-          "domains": [
-            "domain:alidns.com",
-            "domain:doh.pub",
-            "domain:dot.pub",
-            "domain:360.cn",
-            "domain:onedns.net",
-            "geosite:cn"
-          ],
-          "expectIPs": [
-            "geoip:cn"
-          ],
-          "skipFallback": true
-        }
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true,
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls"
-          ],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      }
-    ],
-    "log": {
-      "loglevel": "warning"
-    },
-    "outbounds": [
-      {
-        "mux": {
-          "concurrency": -1,
-          "enabled": false
-        },
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "104.16.62.25",
-              "port": 2053,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "d37a75db-76b6-4db8-b213-0d5b044d138d",
-                  "level": 8
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": true,
-            "serverName": "hio-awx.pages.dev",
-            "show": false
-          },
-          "wsSettings": {
-            "headers": {
-              "Host": "hio-awx.pages.dev"
-            },
-            "path": "/fast"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "settings": {
-          "response": {
-            "type": "http"
-          }
-        },
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇦🇿",
+    "remarks": "🇵🇱",
     "routing": {
       "domainStrategy": "AsIs",
       "rules": [
@@ -936,13 +673,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "89.185.81.123",
-              "port": 443,
+              "address": "104.19.44.117",
+              "port": 2096,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "",
-                  "id": "6986ac20-af56-4657-babd-552bb4e57aa9",
+                  "id": "ae0dd58e-e222-40bf-84ae-365a97532737",
                   "level": 8
                 }
               ]
@@ -950,19 +687,18 @@
           ]
         },
         "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
             "allowInsecure": true,
-            "publicKey": "256_nhGBxahWpHUBAQUN-MkS58XedIAc6glz0b-bjx0",
-            "serverName": "yahoo.com",
-            "shortId": "bf05",
+            "serverName": "pagescm.freen14.cc.cd",
             "show": false
           },
-          "security": "reality",
-          "tcpSettings": {
-            "header": {
-              "type": "none"
-            }
+          "wsSettings": {
+            "headers": {
+              "Host": "pagescm.freen14.cc.cd"
+            },
+            "path": "/vod"
           }
         },
         "tag": "proxy"
@@ -984,7 +720,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇳🇴",
+    "remarks": "🇩🇪",
     "routing": {
       "domainStrategy": "AsIs",
       "rules": [
@@ -1212,13 +948,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "172.66.47.69",
-              "port": 2053,
+              "address": "104.17.121.71",
+              "port": 443,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "",
-                  "id": "8c4604ef-749c-4b56-adf1-7da405002a21",
+                  "id": "ae0dd58e-e222-40bf-84ae-365a97532737",
                   "level": 8
                 }
               ]
@@ -1230,14 +966,294 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": true,
-            "serverName": "qyi.fqjd663.ggff.net",
+            "serverName": "pagescm.freen34.cc.cd",
             "show": false
           },
           "wsSettings": {
             "headers": {
-              "Host": "qyi.fqjd663.ggff.net"
+              "Host": "pagescm.freen34.cc.cd"
             },
-            "path": "/"
+            "path": "/question/avatar/hot"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "remarks": "🇦🇿",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:googleapis.cn",
+            "domain:gstatic.com"
+          ],
+          "outboundTag": "proxy",
+          "type": "field"
+        },
+        {
+          "network": "udp",
+          "outboundTag": "block",
+          "port": "443",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "223.5.5.5",
+            "223.6.6.6",
+            "2400:3200::1",
+            "2400:3200:baba::1",
+            "119.29.29.29",
+            "1.12.12.12",
+            "120.53.53.53",
+            "2402:4e00::",
+            "2402:4e00:1::",
+            "180.76.76.76",
+            "2400:da00::6666",
+            "114.114.114.114",
+            "114.114.115.115",
+            "114.114.114.119",
+            "114.114.115.119",
+            "114.114.114.110",
+            "114.114.115.110",
+            "180.184.1.1",
+            "180.184.2.2",
+            "101.226.4.6",
+            "218.30.118.6",
+            "123.125.81.6",
+            "140.207.198.6",
+            "1.2.4.8",
+            "210.2.4.8",
+            "52.80.66.66",
+            "117.50.22.22",
+            "2400:7fc0:849e:200::4",
+            "2404:c2c0:85d8:901::4",
+            "117.50.10.10",
+            "52.80.52.52",
+            "2400:7fc0:849e:200::8",
+            "2404:c2c0:85d8:901::8",
+            "117.50.60.30",
+            "52.80.60.30"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:alidns.com",
+            "domain:doh.pub",
+            "domain:dot.pub",
+            "domain:360.cn",
+            "domain:onedns.net"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:cn"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:cn"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        }
+      ]
+    }
+  },
+  {
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com",
+        "dns.alidns.com": [
+          "223.5.5.5",
+          "223.6.6.6",
+          "2400:3200::1",
+          "2400:3200:baba::1"
+        ],
+        "one.one.one.one": [
+          "1.1.1.1",
+          "1.0.0.1",
+          "2606:4700:4700::1111",
+          "2606:4700:4700::1001"
+        ],
+        "dns.cloudflare.com": [
+          "104.16.132.229",
+          "104.16.133.229",
+          "2606:4700::6810:84e5",
+          "2606:4700::6810:85e5"
+        ],
+        "cloudflare-dns.com": [
+          "104.16.248.249",
+          "104.16.249.249",
+          "2606:4700::6810:f8f9",
+          "2606:4700::6810:f9f9"
+        ],
+        "dot.pub": [
+          "1.12.12.12",
+          "120.53.53.53"
+        ],
+        "dns.google": [
+          "8.8.8.8",
+          "8.8.4.4",
+          "2001:4860:4860::8888",
+          "2001:4860:4860::8844"
+        ],
+        "dns.quad9.net": [
+          "9.9.9.9",
+          "149.112.112.112",
+          "2620:fe::fe",
+          "2620:fe::9"
+        ],
+        "common.dot.dns.yandex.net": [
+          "77.88.8.8",
+          "77.88.8.1",
+          "2a02:6b8::feed:0ff",
+          "2a02:6b8:0:1::feed:0ff"
+        ],
+        "de1.coconutstrip.co": "195.66.24.46"
+      },
+      "servers": [
+        "1.1.1.1",
+        {
+          "address": "1.1.1.1",
+          "domains": [
+            "domain:googleapis.cn",
+            "domain:gstatic.com"
+          ]
+        },
+        {
+          "address": "223.5.5.5",
+          "domains": [
+            "domain:alidns.com",
+            "domain:doh.pub",
+            "domain:dot.pub",
+            "domain:360.cn",
+            "domain:onedns.net",
+            "geosite:cn"
+          ],
+          "expectIPs": [
+            "geoip:cn"
+          ],
+          "skipFallback": true
+        }
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": -1,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "de1.coconutstrip.co",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "80e45912-0276-4afc-81be-789bdd87e0d0",
+                  "level": 8
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "allowInsecure": true,
+            "fingerprint": "firefox",
+            "publicKey": "TORlcJgV39JM4JOb7934zavVt9IsGXbvvPRo2xi0JCE",
+            "serverName": "de1.coconutstrip.co",
+            "show": false
+          },
+          "security": "reality",
+          "sockopt": {
+            "domainStrategy": "UseIPv4v6"
+          },
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
           }
         },
         "tag": "proxy"
@@ -1425,13 +1441,6 @@
           "77.88.8.1",
           "2a02:6b8::feed:0ff",
           "2a02:6b8:0:1::feed:0ff"
-        ],
-        "pl.nodes.rocketnetwork.ru": [
-          "195.3.221.158",
-          "195.3.223.40",
-          "195.3.221.147",
-          "193.34.213.174",
-          "195.3.223.126"
         ]
       },
       "servers": [
@@ -1494,13 +1503,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "pl.nodes.rocketnetwork.ru",
-              "port": 443,
+              "address": "8.35.211.138",
+              "port": 2096,
               "users": [
                 {
                   "encryption": "none",
-                  "flow": "xtls-rprx-vision",
-                  "id": "60d0630c-8ac4-436d-ad2c-b798b63e1c69",
+                  "flow": "",
+                  "id": "ae0dd58e-e222-40bf-84ae-365a97532737",
                   "level": 8
                 }
               ]
@@ -1508,23 +1517,18 @@
           ]
         },
         "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
             "allowInsecure": true,
-            "fingerprint": "chrome",
-            "publicKey": "Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs",
-            "serverName": "pl.nodes.rocketnetwork.ru",
-            "shortId": "428ef87fd47a3a32",
+            "serverName": "pagescm.freen20.cc.cd",
             "show": false
           },
-          "security": "reality",
-          "sockopt": {
-            "domainStrategy": "UseIPv4v6"
-          },
-          "tcpSettings": {
-            "header": {
-              "type": "none"
-            }
+          "wsSettings": {
+            "headers": {
+              "Host": "pagescm.freen20.cc.cd"
+            },
+            "path": "/item"
           }
         },
         "tag": "proxy"
@@ -1546,7 +1550,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇮🇩",
+    "remarks": "🇩🇪",
     "routing": {
       "domainStrategy": "AsIs",
       "rules": [
