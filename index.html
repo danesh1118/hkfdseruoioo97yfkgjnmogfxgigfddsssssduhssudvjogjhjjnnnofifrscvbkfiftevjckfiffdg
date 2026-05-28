@@ -158,6 +158,10 @@
             box-shadow: 0 12px 30px rgba(240, 147, 251, 0.6);
         }
 
+        .btn-premium i {
+            font-size: 1.3rem;
+        }
+
         .servers-card {
             grid-column: 1 / -1;
             overflow-x: auto;
@@ -309,34 +313,26 @@
 <body>
 
     <script>
+        // فقط لینک‌های خام (دقیقاً مثل چیزی که فرستادی)
         const serverConfigs = [
-            // آلمان ۱ تا ۵
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"87.120.93.146","port":443,"users":[{"id":"91e120bc-159a-4390-b4e1-197b19602ea0","encryption":"none","flow":"xtls-rprx-vision-udp443"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇩🇪","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"87.120.93.244","port":443,"users":[{"id":"91e120bc-159a-4390-b4e1-197b19602ea0","encryption":"none","flow":"xtls-rprx-vision-udp443"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇩🇪","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"87.120.93.140","port":443,"users":[{"id":"91e120bc-159a-4390-b4e1-197b19602ea0","encryption":"none","flow":"xtls-rprx-vision-udp443"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇩🇪","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"69.84.182.49","port":2096,"users":[{"id":"e258977b-e413-4718-a3af-02d75492c349","encryption":"none"}]}]},"streamSettings":{"network":"ws","security":"tls","tlsSettings":{"serverName":"jp.aniua.qzz.io"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇩🇪","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"87.120.93.243","port":443,"users":[{"id":"91e120bc-159a-4390-b4e1-197b19602ea0","encryption":"none","flow":"xtls-rprx-vision"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇩🇪","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-
-            // هلند
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"37.49.225.189","port":443,"users":[{"id":"01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f","encryption":"none","flow":"xtls-rprx-vision"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq","alpn":["http/1.1"]}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇳🇱","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"37.49.225.189","port":443,"users":[{"id":"01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f","encryption":"none","flow":"xtls-rprx-vision-udp443"}]}]},"streamSettings":{"network":"tcp","security":"tls","tlsSettings":{"serverName":"sub.sbrf-cdn342.ru","fp":"qq","alpn":["http/1.1"]}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇳🇱","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-
-            // فنلاند
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"downlod.musicribvar.com","port":45029,"users":[{"id":"01ef96b4-e7ec-4218-8ffe-a59e1cdfd836","encryption":"none"}]}]},"streamSettings":{"network":"tcp","security":"none"},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇫🇮","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"95.216.209.22","port":443,"users":[{"id":"bd31a135-8511-421d-a6b7-45937ef59e88","encryption":"none"}]}]},"streamSettings":{"network":"tcp","security":"none"},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇫🇮","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-
-            // روسیه
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vless","settings":{"vnext":[{"address":"95.182.83.251","port":2082,"users":[{"id":"e0b4566b-3333-4c50-9381-ba3570bee83f","encryption":"none"}]}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/OninOShop","headers":{"Host":"95.182.83.251"}}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇷🇺","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}},
-
-            // هنگ‌کنگ
-            {"dns":{"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true},"sniffing":{"enabled":true,"destOverride":["http","tls"]}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"vmess","settings":{"vnext":[{"address":"130.94.101.35","port":51387,"users":[{"id":"07a60f19-b707-4ee8-a563-21c231c16219","alterId":0}]}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/arki"}},"tag":"proxy"},{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"remarks":"🇭🇰","routing":{"rules":[{"ip":["geoip:private"],"outboundTag":"direct"}]}}
+            "vless://91e120bc-159a-4390-b4e1-197b19602ea0@87.120.93.146:443?security=tls&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision-udp443&sni=sub.sbrf-cdn342.ru#%F0%9F%87%A9%F0%9F%87%AA",
+            "vless://91e120bc-159a-4390-b4e1-197b19602ea0@87.120.93.244:443?security=tls&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision-udp443&sni=sub.sbrf-cdn342.ru#%F0%9F%87%A9%F0%9F%87%AA",
+            "vless://91e120bc-159a-4390-b4e1-197b19602ea0@87.120.93.140:443?security=tls&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision-udp443&sni=sub.sbrf-cdn342.ru#%F0%9F%87%A9%F0%9F%87%AA",
+            "vless://e258977b-e413-4718-a3af-02d75492c349@69.84.182.49:2096?path=%2F&security=tls&encryption=none&host=jp.aniua.qzz.io&type=ws&sni=jp.aniua.qzz.io#%F0%9F%87%A9%F0%9F%87%AA",
+            "vless://91e120bc-159a-4390-b4e1-197b19602ea0@87.120.93.243:443?security=tls&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#%F0%9F%87%A9%F0%9F%87%AA",
+            "vless://01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f@37.49.225.189:443?security=tls&alpn=http%2F1.1&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#%F0%9F%87%B3%F0%9F%87%B1",
+            "vless://01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f@37.49.225.189:443?security=tls&alpn=http%2F1.1&encryption=none&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision-udp443&sni=sub.sbrf-cdn342.ru#%F0%9F%87%B3%F0%9F%87%B1",
+            "vless://01ef96b4-e7ec-4218-8ffe-a59e1cdfd836@downlod.musicribvar.com:45029?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%AB%F0%9F%87%AE",
+            "vless://bd31a135-8511-421d-a6b7-45937ef59e88@95.216.209.22:443?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%87%AB%F0%9F%87%AE",
+            "vless://e0b4566b-3333-4c50-9381-ba3570bee83f@95.182.83.251:2082?path=%2FOninOShop&security=none&encryption=none&host=95.182.83.251&type=ws#%F0%9F%87%B7%F0%9F%87%BA",
+            "vmess://eyJhZGQiOiIxMzAuOTQuMTAxLjM1IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA3YTYwZjE5LWI3MDctNGVlOC1hNTYzLTIxYzIzMWMxNjIxOSIsIm5ldCI6IndzIiwicGF0aCI6Ii9hcmtpIiwicG9ydCI6IjUxMzg3IiwicHMiOiLwn4eo8J+HsyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiLS0tIiwidiI6IjIifQ=="
         ];
 
         const countryEmojis = ["🇩🇪","🇩🇪","🇩🇪","🇩🇪","🇩🇪","🇳🇱","🇳🇱","🇫🇮","🇫🇮","🇷🇺","🇭🇰"];
 
         const START_TIME = Date.parse('2026-05-27T07:40:00Z');
         const PERIOD_MS = 7 * 24 * 60 * 60 * 1000;
-        const MAX_VOLUME_GB = 100000;
+        const MAX_VOLUME_GB = 50000;
 
         const pattern = [0.3194, 0.3946, 0.3605, 0.3062, 0.3953, 0.3326, 0.3767, 0.3047, 0.3891, 0.3209, 0.3504, 0.3961, 0.3116, 0.3837, 0.3450, 0.3078, 0.3721, 0.4000, 0.3147, 0.3589, 0.3279, 0.3907, 0.3000, 0.3674, 0.3860, 0.3349, 0.3140, 0.3791, 0.3465, 0.3093, 0.3977, 0.3225, 0.3651, 0.3023, 0.3806, 0.3411, 0.3163, 0.3922, 0.3550, 0.3295, 0.3736, 0.3101, 0.3992, 0.3357, 0.3527, 0.3062, 0.3853, 0.3690, 0.3310, 0.3008, 0.3775, 0.3442, 0.3124, 0.3969, 0.3233, 0.3574, 0.3853, 0.3178, 0.3938, 0.3953];
         const patternSumPerMinuteGB = pattern.reduce((a, b) => a + b, 0);
@@ -370,21 +366,20 @@
         }
 
         function copyConfig(index) {
-            const config = serverConfigs[index];
-            const jsonString = JSON.stringify(config, null, 2);
-            navigator.clipboard.writeText(jsonString).then(() => {
-                alert(`کانفیگ ${countryEmojis[index]} کپی شد!`);
+            const link = serverConfigs[index];
+            navigator.clipboard.writeText(link).then(() => {
+                alert(`✅ لینک ${countryEmojis[index]} کپی شد!`);
             }).catch(() => {
-                prompt('کپی نشد، دستی کپی کنید:', jsonString);
+                prompt('کپی نشد، دستی کپی کنید:', link);
             });
         }
 
         function copyAllManual() {
-            const subscriptionJson = JSON.stringify(serverConfigs, null, 2);
-            navigator.clipboard.writeText(subscriptionJson).then(() => {
-                alert('تمام کانفیگ‌ها کپی شدند!');
+            const allLinks = serverConfigs.join('\n\n');
+            navigator.clipboard.writeText(allLinks).then(() => {
+                alert('تمام لینک‌ها کپی شدند!');
             }).catch(() => {
-                prompt('کپی نشد، دستی کپی کنید:', subscriptionJson);
+                prompt('کپی نشد، دستی کپی کنید:', allLinks);
             });
         }
 
@@ -407,7 +402,7 @@
         }
 
         function openSupport() { window.open('https://t.me/@', '_blank'); }
-        function addToApp() { alert('از دکمه‌های کپی کانفیگ استفاده کنید!'); }
+        function addToApp() { alert('از دکمه‌های کپی استفاده کنید!'); }
         function showFAQ() { alert('سوالات متداول...'); }
         function showTutorial() { alert('آموزش استفاده...'); }
         function buyDedicatedConfig() { window.open('https://t.me/@', '_blank'); }
@@ -468,7 +463,7 @@
                     <h3>لیست سرورها</h3>
 
                     <button class="copy-all-manual-btn" onclick="copyAllManual()">
-                        <i class="fas fa-copy"></i> کپی همه کانفیگ‌ها
+                        <i class="fas fa-copy"></i> کپی همه لینک‌ها
                     </button>
 
                     <button class="copy-sub-btn" onclick="copySubLink()">
@@ -482,17 +477,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>آلمان VIP ۱</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>45 ms</td><td>18%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(0)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آلمان VIP ۲</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>52 ms</td><td>21%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(1)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آلمان VIP ۳</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>48 ms</td><td>19%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(2)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آلمان VIP ۴</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>60 ms</td><td>25%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(3)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آلمان VIP ۵</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>42 ms</td><td>16%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(4)">کپی کانفیگ</button></td></tr>
-                            <tr><td>هلند VIP ۱</td><td><img src="https://flagcdn.com/nl.svg" class="flag"> هلند</td><td>75 ms</td><td>28%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(5)">کپی کانفیگ</button></td></tr>
-                            <tr><td>هلند VIP ۲</td><td><img src="https://flagcdn.com/nl.svg" class="flag"> هلند</td><td>70 ms</td><td>24%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(6)">کپی کانفیگ</button></td></tr>
-                            <tr><td>فنلاند VIP ۱</td><td><img src="https://flagcdn.com/fi.svg" class="flag"> فنلاند</td><td>95 ms</td><td>32%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(7)">کپی کانفیگ</button></td></tr>
-                            <tr><td>فنلاند VIP ۲</td><td><img src="https://flagcdn.com/fi.svg" class="flag"> فنلاند</td><td>88 ms</td><td>30%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(8)">کپی کانفیگ</button></td></tr>
-                            <tr><td>روسیه VIP</td><td><img src="https://flagcdn.com/ru.svg" class="flag"> روسیه</td><td>110 ms</td><td>35%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(9)">کپی کانفیگ</button></td></tr>
-                            <tr><td>هنگ‌کنگ VIP</td><td><img src="https://flagcdn.com/hk.svg" class="flag"> هنگ‌کنگ</td><td>160 ms</td><td>42%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(10)">کپی کانفیگ</button></td></tr>
+                            <tr><td>آلمان VIP ۱</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>45 ms</td><td>18%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(0)">کپی لینک</button></td></tr>
+                            <tr><td>آلمان VIP ۲</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>52 ms</td><td>21%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(1)">کپی لینک</button></td></tr>
+                            <tr><td>آلمان VIP ۳</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>48 ms</td><td>19%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(2)">کپی لینک</button></td></tr>
+                            <tr><td>آلمان VIP ۴</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>60 ms</td><td>25%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(3)">کپی لینک</button></td></tr>
+                            <tr><td>آلمان VIP ۵</td><td><img src="https://flagcdn.com/de.svg" class="flag"> آلمان</td><td>42 ms</td><td>16%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(4)">کپی لینک</button></td></tr>
+                            <tr><td>هلند VIP ۱</td><td><img src="https://flagcdn.com/nl.svg" class="flag"> هلند</td><td>75 ms</td><td>28%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(5)">کپی لینک</button></td></tr>
+                            <tr><td>هلند VIP ۲</td><td><img src="https://flagcdn.com/nl.svg" class="flag"> هلند</td><td>70 ms</td><td>24%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(6)">کپی لینک</button></td></tr>
+                            <tr><td>فنلاند VIP ۱</td><td><img src="https://flagcdn.com/fi.svg" class="flag"> فنلاند</td><td>95 ms</td><td>32%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(7)">کپی لینک</button></td></tr>
+                            <tr><td>فنلاند VIP ۲</td><td><img src="https://flagcdn.com/fi.svg" class="flag"> فنلاند</td><td>88 ms</td><td>30%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(8)">کپی لینک</button></td></tr>
+                            <tr><td>روسیه VIP</td><td><img src="https://flagcdn.com/ru.svg" class="flag"> روسیه</td><td>110 ms</td><td>35%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(9)">کپی لینک</button></td></tr>
+                            <tr><td>هنگ‌کنگ VIP</td><td><img src="https://flagcdn.com/hk.svg" class="flag"> هنگ‌کنگ</td><td>160 ms</td><td>42%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(10)">کپی لینک</button></td></tr>
                         </tbody>
                     </table>
                 </div>
